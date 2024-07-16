@@ -30,10 +30,9 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        function createCustomIcon(iconEmoji) {
-            return L.divIcon({
-                html: iconEmoji,
-                className: '',
+        function createCustomIcon(iconUrl) {
+            return L.icon({
+                iconUrl: iconUrl,
                 iconSize: [50, 50],
                 iconAnchor: [25, 50],
                 popupAnchor: [0, -50]
@@ -41,11 +40,11 @@
         }
 
         var data = [
-            {lat: -17.6509, lon: -149.4260, icon: '🏝️', text: 'Plage de Punaauia', isWater: false},
-            {lat: -17.5768, lon: -149.6121, icon: '🏨', text: 'Hôtel InterContinental Tahiti Resort & Spa', isWater: false},
-            {lat: -17.7368, lon: -149.5965, icon: '🌺', text: 'Jardin Botanique Harrison Smith', isWater: false},
-            {lat: -18.1367, lon: -149.2627, icon: '🌊', text: 'Spot de surf Teahupo\'o', isWater: true},
-            {lat: -17.6551, lon: -149.4340, icon: '🍽️', text: 'Restaurant Le Coco\'s', isWater: false}
+            {lat: -17.6509, lon: -149.4260, icon: 'media/plage.png', text: 'Plage de Punaauia', isWater: false},
+            {lat: -17.5768, lon: -149.6121, icon: 'media/hotel.png', text: 'Hôtel InterContinental Tahiti Resort & Spa', isWater: false},
+            {lat: -17.7368, lon: -149.5965, icon: 'media/fleur.png', text: 'Jardin Botanique Harrison Smith', isWater: false},
+            {lat: -18.1367, lon: -149.2627, icon: 'media/vague.png', text: 'Spot de surf Teahupo\'o', isWater: true},
+            {lat: -17.6551, lon: -149.4340, icon: 'media/restaurant.png', text: 'Restaurant Le Coco\'s', isWater: false}
         ];
 
         var userLocation = null;
@@ -77,7 +76,7 @@
 
         function onLocationFound(e) {
             userLocation = e.latlng;
-            var userIcon = createCustomIcon('📍');
+            var userIcon = createCustomIcon('media/me.png');
             var radius = e.accuracy / 2;
 
             L.marker(e.latlng, {icon: userIcon}).addTo(map)
