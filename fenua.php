@@ -28,17 +28,22 @@
             margin-right: 5px;
             padding: 5px 10px;
         }
+        .controls img {
+            height: 30px;
+            width: 30px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
     <h1>Carte Interactive avec Localisation et Filtre</h1>
     <div class="controls">
         <button onclick="showAllMarkers()">Tous</button>
-        <button onclick="filterMarkers('media/fenuama/marker_amp.png')">Plages</button>
-        <button onclick="filterMarkers('media/fenuama/marker_dec.png')">Hôtels</button>
-        <button onclick="filterMarkers('media/fenuama/marker_ele.png')">Jardins</button>
-        <button onclick="filterMarkers('media/fenuama/marker_med.png')">Surf</button>
-        <button onclick="filterMarkers('media/fenuama/markerb.png')">Restaurants</button>
+        <button onclick="filterMarkers('media/fenuama/marker_amp.png')"><img src="media/fenuama/marker_amp.png" alt="Plages"></button>
+        <button onclick="filterMarkers('media/fenuama/marker_dec.png')"><img src="media/fenuama/marker_dec.png" alt="Hôtels"></button>
+        <button onclick="filterMarkers('media/fenuama/marker_ele.png')"><img src="media/fenuama/marker_ele.png" alt="Jardins"></button>
+        <button onclick="filterMarkers('media/fenuama/marker_med.png')"><img src="media/fenuama/marker_med.png" alt="Surf"></button>
+        <button onclick="filterMarkers('media/fenuama/markerb.png')"><img src="media/fenuama/markerb.png" alt="Restaurants"></button>
         <select onchange="zoomToCity(this.value)">
             <option value="">Sélectionner une ville</option>
             <option value="arue">Arue</option>
@@ -49,7 +54,7 @@
     <div id="map"></div>
     
     <script>
-        var map = L.map('map').setView([-17.6509, -149.4260], 12);
+        var map = L.map('map').setView([-17.6509, -149.4260], 11);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -102,7 +107,7 @@
 
         function onLocationFound(e) {
             userLocation = e.latlng;
-            var userIcon = createCustomIcon('media/fenuama/markerf.png');
+            var userIcon = createCustomIcon('media/me.png');
             var radius = e.accuracy / 2;
 
             L.marker(e.latlng, {icon: userIcon}).addTo(map)
@@ -119,7 +124,7 @@
         map.on('locationerror', onLocationError);
 
         // Appel à la fonction locate sans setView pour éviter de zoomer automatiquement
-        map.locate({maxZoom: 13});
+        map.locate({maxZoom: 16});
 
         function showAllMarkers() {
             markers.forEach(function(item) {
