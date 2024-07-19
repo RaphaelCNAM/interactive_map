@@ -1,0 +1,117 @@
+#map {
+  height: 750px;
+  width: 100%;
+  position: relative;
+}
+.controls {
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.filter-button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.filter-button img {
+  height: 30px;
+  width: 25px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.filter-tous {
+  border-color: #d9167f;
+}
+.filter-verre {
+  border-color: #009640;
+}
+.filter-dechetterie {
+  border-color: #009640;
+}
+.filter-huile {
+  border-color: #4d4d4d;
+}
+.filter-med {
+  border-color: #007bc0;
+}
+.filter-amp {
+  border-color: #75429b;
+}
+.filter-electronique {
+  border-color: #d51818;
+}
+.filter-batteries {
+  border-color: #d51818;
+}
+.filter-piles {
+  border-color: #002b80;
+}
+.filter-fusees {
+  border-color: #d51818;
+}
+.filter-button:hover,
+.filter-button.active {
+  color: white;
+}
+.filter-tous:hover,
+.filter-tous.active {
+  background-color: #d9167f;
+}
+.filter-verre:hover,
+.filter-verre.active {
+  background-color: #009640;
+}
+.filter-dechetterie:hover,
+.filter-dechetterie.active {
+  background-color: #009640;
+}
+.filter-huile:hover,
+.filter-huile.active {
+  background-color: #4d4d4d;
+}
+.filter-med:hover,
+.filter-med.active {
+  background-color: #007bc0;
+}
+.filter-amp:hover,
+.filter-amp.active {
+  background-color: #75429b;
+}
+.filter-electronique:hover,
+.filter-electronique.active {
+  background-color: #d51818;
+}
+.filter-batteries:hover,
+.filter-batteries.active {
+  background-color: #d51818;
+}
+.filter-piles:hover,
+.filter-piles.active {
+  background-color: #002b80;
+}
+.filter-fusees:hover,
+.filter-fusees.active {
+  background-color: #d51818;
+}
+#citySelector {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin-top: 150px;
+  z-index: 1000;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#citySelector select {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
